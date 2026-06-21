@@ -32,4 +32,7 @@ func main() {
 
 	updateNameByPointer(m)
 	fmt.Println(name)
+
+	myBill := newBill("mahir")
+	fmt.Println(myBill)
 }
