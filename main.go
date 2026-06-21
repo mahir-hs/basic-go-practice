@@ -1,40 +1,35 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
-func greet(n string) {
-	fmt.Println(n)
+func updateName(x string) {
+	x = "horus"
 }
 
-func bye(n string) {
-	fmt.Println("good bye", n)
+func updateNameByPointer(x *string) {
+	*x = "mahir"
 }
 
-func multipleValue(n []string, f func(string)) {
-	for _, val := range n {
-		f(val)
-	}
-}
-
-func circleArea(r float64) float64 {
-	return math.Pi * r * r
+func updateMenu(y map[string]float64) {
+	y["soup"] = 99.9
 }
 func main() {
 
-	greet("whatsupp")
-	bye("mahir")
+	name := "titus"
+	updateName(name)
+	fmt.Println(name)
 
-	multipleValue([]string{"aa", "bb", "cc"}, bye)
-	fmt.Println(circleArea(10.9))
-
-	sayHello("horous")
-
-	for _, value := range points {
-		fmt.Println(value)
+	menu := map[string]float64{
+		"soup": 1.5,
+		"pie":  5.9,
 	}
+	updateMenu(menu)
+	fmt.Println(menu)
 
-	mapTest()
+	m := &name
+
+	fmt.Println(*m)
+
+	updateNameByPointer(m)
+	fmt.Println(name)
 }
