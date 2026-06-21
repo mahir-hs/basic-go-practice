@@ -1,23 +1,38 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
+func greet(n string) {
+	fmt.Println(n)
+}
+
+func bye(n string) {
+	fmt.Println("good bye", n)
+}
+
+func multipleValue(n []string, f func(string)) {
+	for _, val := range n {
+		f(val)
+	}
+}
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
+}
 func main() {
-	x := 0
-	for x < 5 {
-		fmt.Println(x)
-		x++
-	}
 
-	names := []string{"aa", "bb", "cc"}
+	greet("whatsupp")
+	bye("mahir")
 
-	for index, value := range names {
-		fmt.Println(index, value)
-	}
+	multipleValue([]string{"aa", "bb", "cc"}, bye)
+	fmt.Println(circleArea(10.9))
 
-	if x <= 0 {
-		fmt.Println("value is not changed!")
-	} else if x > 0 {
-		fmt.Println("value got changed")
+	sayHello("horous")
+
+	for _, value := range points {
+		fmt.Println(value)
 	}
 }
