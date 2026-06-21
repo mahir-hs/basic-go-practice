@@ -4,28 +4,24 @@ import "fmt"
 
 func main() {
 
-	//strings
-	var nameOne string = "i am lost,"
-	var nameTwo = "so lost..."
-	var nameThree string
-	fmt.Println(nameOne, nameTwo, nameThree)
+	// var ages [3]int = [3]int{10, 17, 26}
+	var ages = [3]int{10, 17, 26}
 
-	nameOne = "oh no!!"
-	nameThree = "i am lost"
+	names := [4]string{"aa", "bb", "cc", "dd"}
+	names[1] = "gg"
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	fmt.Println(ages, len(ages))
+	fmt.Println(names, len(names))
 
-	age := 50
-	name := "titus"
+	scores := []int{100, 200, 300}
+	scores = append(scores, 400)
+	fmt.Println(scores, len(scores))
 
-	fmt.Println("my name is ", name, " and my age is ", age)
-	fmt.Println("my name is _, my age is _", name, age)
-	fmt.Printf("my name is %v and my age is %v \n", name, age)
-	fmt.Printf("my name is %q and my age is %q \n", name, age)
-	fmt.Printf("age is type of %T \n", age)
-	fmt.Printf("you scorred %0.2f marks \n", 500.159)
+	rangeOne := names[1:3]
+	rangeTwo := names[2:]
+	rangeThree := names[:3]
+	fmt.Println(rangeOne, len(rangeOne), rangeTwo, rangeThree)
 
-	str := fmt.Sprintf("my name is %v and my age is %v \n", name, age)
-
-	fmt.Println(str)
+	rangeOne = append(rangeOne, "kk")
+	fmt.Println(rangeOne)
 }
