@@ -34,5 +34,6 @@ func main() {
 	fmt.Println(name)
 
 	myBill := newBill("mahir")
-	fmt.Println(myBill)
+	fmt.Println(myBill.format())
+
 }
