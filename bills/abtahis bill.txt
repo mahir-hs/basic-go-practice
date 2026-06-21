@@ -1,0 +1,7 @@
+
+	 bill breakdown 
+cake:                     ...$84 
+biri:                     ...$12 
+pie:                      ...$5.99 
+                  total:  ...$101.99 
+                    tip:  ...$12.00 

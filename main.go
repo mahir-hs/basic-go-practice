@@ -54,7 +54,8 @@ func promptOptions(b bill) {
 		fmt.Println("tip updated - ", tip)
 		promptOptions(b)
 	case "s":
-
+		b.save()
+		fmt.Println("You saved the file - ", b.name)
 	default:
 		fmt.Println("you have entered wrong input, please try again!?")
 		promptOptions(b)
