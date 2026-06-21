@@ -1,27 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 func main() {
 
-	// var ages [3]int = [3]int{10, 17, 26}
-	var ages = [3]int{10, 17, 26}
+	greeting := "hello world"
+	fmt.Println(strings.Contains(greeting, "hello"))
+	fmt.Println(strings.ReplaceAll(greeting, "hello", "hola!"))
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.Index(greeting, "ll"))
+	fmt.Println(strings.Split(greeting, " "))
 
-	names := [4]string{"aa", "bb", "cc", "dd"}
-	names[1] = "gg"
+	fmt.Println("Original string = ", greeting)
 
-	fmt.Println(ages, len(ages))
-	fmt.Println(names, len(names))
+	ages := []int{4, 10, 5, 9, 55, 78, 6, 7, 7}
+	sort.Ints(ages)
+	fmt.Println(ages)
 
-	scores := []int{100, 200, 300}
-	scores = append(scores, 400)
-	fmt.Println(scores, len(scores))
-
-	rangeOne := names[1:3]
-	rangeTwo := names[2:]
-	rangeThree := names[:3]
-	fmt.Println(rangeOne, len(rangeOne), rangeTwo, rangeThree)
-
-	rangeOne = append(rangeOne, "kk")
-	fmt.Println(rangeOne)
+	index := sort.SearchInts(ages, 7)
+	fmt.Println(index)
 }
