@@ -1,44 +1,37 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
-func updateName(x string) {
-	x = "horus"
+func getInput(prompt string, r *bufio.Reader) (string, error) {
+	fmt.Print(prompt)
+	input, err := r.ReadString('\n')
+
+	return strings.TrimSpace(input), err
 }
 
-func updateNameByPointer(x *string) {
-	*x = "mahir"
+func createBill() bill {
+	reader := bufio.NewReader(os.Stdin)
+	name, _ := getInput("Create a new bill: ", reader)
+	b := newBill(name)
+	fmt.Println("Created the bill - ", b.name)
+
+	return b
 }
 
-func updateMenu(y map[string]float64) {
-	y["soup"] = 99.9
+func promptOptions(b bill) {
+	reader := bufio.NewReader(os.Stdin)
+	opt, _ := getInput("choose option (a - add item, s - save bill, t- add tip): ", reader)
+	fmt.Println(opt)
 }
+
 func main() {
 
-	name := "titus"
-	updateName(name)
-	fmt.Println(name)
-
-	menu := map[string]float64{
-		"soup": 1.5,
-		"pie":  5.9,
-	}
-	updateMenu(menu)
-	fmt.Println(menu)
-
-	m := &name
-
-	fmt.Println(*m)
-
-	updateNameByPointer(m)
-	fmt.Println(name)
-
-	myBill := newBill("mahir")
-	fmt.Println(myBill.format())
-
-	myBill.addBill("soup", 10.9)
-	myBill.addBill("shorma", 80.5)
-
-	myBill.updateTip(100)
-	fmt.Println(myBill.format())
+	mybill := createBill()
+	promptOptions(mybill)
+	fmt.Println(mybill)
 }
