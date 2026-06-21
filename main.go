@@ -36,4 +36,9 @@ func main() {
 	myBill := newBill("mahir")
 	fmt.Println(myBill.format())
 
+	myBill.addBill("soup", 10.9)
+	myBill.addBill("shorma", 80.5)
+
+	myBill.updateTip(100)
+	fmt.Println(myBill.format())
 }
