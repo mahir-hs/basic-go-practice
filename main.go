@@ -35,4 +35,6 @@ func main() {
 	for _, value := range points {
 		fmt.Println(value)
 	}
+
+	mapTest()
 }
